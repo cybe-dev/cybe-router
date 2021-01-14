@@ -9,6 +9,7 @@
             "email": "Aditamaakbar1108@gmail.com"
         }
     ],
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {"Cybe": "src/"}
     },
