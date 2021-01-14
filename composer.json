@@ -1,0 +1,16 @@
+{
+    "name": "cybe/cybe-router",
+    "description": "Simple PHP router library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Akbar Aditama",
+            "email": "Aditamaakbar1108@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Cybe": "src/"}
+    },
+    "require": {}
+}
