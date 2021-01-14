@@ -11,7 +11,7 @@
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "psr-4": {"Cybe\\": "src/"}
+        "psr-4": {"Cybe\\": "src/Cybe/"}
     },
     "require": {
         "php": ">=7.4"
