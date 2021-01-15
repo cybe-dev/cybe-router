@@ -4,7 +4,19 @@ namespace Cybe;
 
 class Router
 {
-    private $get_route = [], $post_route = [];
+    private $get_route = [], $post_route = [], $page_not_found = "";
+
+    public function __construct()
+    {
+        $this->page_not_found = [$this, "error404"];
+    }
+
+    private function error404()
+    {
+        header("Content-Type: application/json");
+        http_response_code(404);
+        echo json_encode(["error" => "Page not found"]);
+    }
 
     private function route($route, $uri, $uri_parse)
     {
@@ -48,10 +60,16 @@ class Router
                         $pass_param[$value] = $tmp_param[$key];
                     }
                 }
+            } else {
+                $exc = $this->page_not_found;
             }
-
         }
         $exc($pass_param);
+    }
+
+    public function set404page($callback)
+    {
+        $this->page_not_found = $callback;
     }
 
     public function get($endpoint, $callback)
