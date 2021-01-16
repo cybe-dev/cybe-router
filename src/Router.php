@@ -8,10 +8,10 @@ class Router
 
     public function __construct()
     {
-        $this->page_not_found = [$this, "error404"];
+        $this->page_not_found = [[$this, "error_404"]];
     }
 
-    private function error404()
+    private function error_404()
     {
         header("Content-Type: application/json");
         http_response_code(404);
@@ -80,7 +80,7 @@ class Router
         $exc($param, ["route" => $route, "index" => $index + 1], [$this, "next"]);
     }
 
-    public function set404page($callback)
+    public function set_404($callback)
     {
         $this->page_not_found = [$callback];
     }
