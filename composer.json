@@ -11,10 +11,7 @@
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "psr-4": {"Cybe\\": "src/"},
-        "classmap": [
-            "./Controller"
-        ]
+        "psr-4": {"Cybe\\": "src/"}
     },
     "require": {
         "php": ">=7.4"
