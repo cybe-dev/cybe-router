@@ -64,12 +64,25 @@ class Router
                 $exc = $this->page_not_found;
             }
         }
-        $exc($pass_param);
+
+        if (is_array($exc)) {
+            $exc[0]($pass_param, ["route" => $exc, "index" => 0], [$this, "next"]);
+        } else {
+            $exc($pass_param);
+        }
+    }
+
+    public function next($param, $position)
+    {
+        $route = $position["route"];
+        $index = $position["index"];
+        $exc = $route[$index + 1];
+        $exc($param, ["route" => $route, "index" => $index + 1], [$this, "next"]);
     }
 
     public function set404page($callback)
     {
-        $this->page_not_found = $callback;
+        $this->page_not_found = [$callback];
     }
 
     public function get($endpoint, $callback)
