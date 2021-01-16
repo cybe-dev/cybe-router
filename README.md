@@ -7,8 +7,9 @@
 ## Quick Start
 
 **Installation**
-
-`composer require cybe/cybe-router:1.1.0`
+```
+composer require cybe/cybe-router:1.1.0
+```
 
 **Basic Usage**
 
