@@ -7,9 +7,11 @@
 ## Quick Start
 
 **Installation**
-```composer require cybe/cybe-router:1.1.0```
+
+`composer require cybe/cybe-router:1.1.0`
 
 **Basic Usage**
+
 Assuming ./public/ is public-accessible directory with index.php file:
 ```php
 <?php
@@ -36,7 +38,9 @@ $router->serve();
 ```
 
 Then run the following command in the terminal to start the localhost web server.
-```php -S localhost:9000 -t public```
+```
+php -S localhost:9000 -t public
+```
 
 ## Guides / Example
 
